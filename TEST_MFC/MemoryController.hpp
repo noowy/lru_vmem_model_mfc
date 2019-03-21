@@ -16,11 +16,18 @@ private:
 	MainMemory *mainMemory;
 
 public:
+	std::mutex mtx;
+	std::condition_variable cv;
+	bool isPaused = false;
+	bool isLaunched = false;
+
 	MemoryController(CTESTMFCDlg *view);
 
 	void onPageCalled();
 	void onProcessLaunched();
 	void onProcessPaused();
+	void launchProcess();
+	void tryPageCall();
 };
 
 #endif

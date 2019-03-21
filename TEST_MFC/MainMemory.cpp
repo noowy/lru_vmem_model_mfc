@@ -166,6 +166,8 @@ int MainMemory::call_page(int pageIdx)
 	if (!remove_least_used_page())
 		return MEMORY_ACCESS_ERROR;
 	
+	insert_page(pageIdx);
+
 	return least_called_pageIdx;
 
 }
