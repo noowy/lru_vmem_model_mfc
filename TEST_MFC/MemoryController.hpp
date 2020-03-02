@@ -15,9 +15,10 @@ private:
 	CTESTMFCDlg * view;
 	MainMemory *mainMemory;
 
-public:
 	std::mutex mtx;
 	std::condition_variable cv;
+
+public:
 	bool isPaused = false;
 	bool isLaunched = false;
 
